@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 
 export type MyButtonProps = {
@@ -7,4 +7,8 @@ export type MyButtonProps = {
   variant: string
 }
 
+export type SortWrapper = {
+  children: ReactNode,
+  by: string
+}
 

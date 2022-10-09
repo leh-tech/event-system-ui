@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "esModuleInterop": true,
+        "target": "es6",
+        "skipLibCheck": true,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "./mockData.ts",
+                "node_modules/*"
+            ]
+        }
+    },
+    "include": [
+        "./**/*",
+    ],
+    "exclude": [
+        "./client"
+    ]
+}

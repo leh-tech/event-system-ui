@@ -1,0 +1,14 @@
+@import "~bootstrap/scss/bootstrap";
+$primaryTextColor: #FFF;
+
+body {
+  background-color: darkgray;
+}
+
+#navbarBrand {
+  color: $primaryTextColor;
+}
+
+.me-auto a {
+  color: $primaryTextColor;
+}

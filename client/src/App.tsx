@@ -1,18 +1,17 @@
 import './App.scss';
-import AppNavbar from "./helpers/Navbar";
+import AppNavbar from "./components/Navbar";
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import EventsSection from 'EventsSection';
+import AddEvent from 'components/AddEvent';
 
 function App() {
   return (
     <main className="App">
-      <Container fluid>
+      <header className="mb-2">
         <AppNavbar />
-        <Container>
-          
-        </Container>
-
+      </header>
+      <Container fluid >
+       <EventsSection></EventsSection>
       </Container>
     </main>
   );

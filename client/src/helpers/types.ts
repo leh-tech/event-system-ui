@@ -12,3 +12,18 @@ export type SortWrapper = {
   by: string
 }
 
+export type DeleteEvent = {
+    uid: string
+}
+
+
+
+export type SearchState = {
+    text: string
+}
+
+export type Owner = {
+    uid: string,
+    name: string,
+    role: string
+}

@@ -1,3 +1,4 @@
+import { Owner } from "./types"
 
 const enum DomainClassifications {
     Electrical = "electrical",
@@ -5,7 +6,7 @@ const enum DomainClassifications {
     Software = "software"
 }
 
-const enum EventStatus {
+export const enum EventStatus {
     OnGoing = "OnGoing",
     Completed = "completed",
     Canceled = "canceled"
@@ -18,15 +19,10 @@ export interface EventState {
     subdomain: string,
     description: string,
     status: EventStatus,
-    created: Date
-    owners: [Owner]
+    created: string
+    owners: Owner[]
 }
 
-export interface Owner {
-    uid: string,
-    name: string,
-    role: string
-}
 
 export interface ParamPayload {
     payload: EventState
@@ -34,9 +30,20 @@ export interface ParamPayload {
 
 export interface EventStoreState {
     events: EventState[],
-    loadingStatus: string
+    loadingStatus: string,
+    updated: boolean,
+    updatedEvents: EventState[]
 }
 
-export interface DeleteEvent {
-    uid: String
+export interface ExtraInfo {
+    description: string,
+    owners: Owner[],
+    id: number,
+    show: any
 }
+
+export interface ChangeStatus  {
+  uid: string,
+  status: EventState["status"]
+}
+

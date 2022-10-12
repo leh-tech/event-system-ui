@@ -1,26 +1,32 @@
+import { useAppDispatch } from 'helpers/hooks';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { searchQuery } from '../redux/searchReducer';
 
-function MyForm() {
+const MyForm = () => {
+    const dispatch = useAppDispatch();
+    const [text, setText] = useState('');
+    const onSubmit = () => {
+        dispatch(searchQuery({text}));
+    }
+
+    const onChange = (e: any) => (setText(e.target.value));
+
     return (
         <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
+            <Form.Group className="mb-1" controlId="formBasicEmail">
+                <Form.Label>Search events</Form.Label>
+                <Form.Control placeholder="Search..." value={text} onChange={onChange} />
+                {/* <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
-                </Form.Text>
+                </Form.Text> */}
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-                Submit
+           
+           
+            <Button variant="primary" onClick={onSubmit}>
+                Search
             </Button>
         </Form>
     );

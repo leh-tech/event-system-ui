@@ -5,7 +5,7 @@
         "build": "npx tsc",
         "client": "npm start --prefix client",
         "server": "nodemon ./server.js",
-        "start": "concurrently \"npm run server\" \"npm run client\""
+        "start": "concurrently \"nodemon server\" \"npm run client\""
     },
     "dependencies": {
         "body-parser": "^1.20.1",
